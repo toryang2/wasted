@@ -137,7 +137,7 @@
 			document.getElementById('description1').value = 'Dont\'t spam.';
 			document.getElementById('description2').value = 'Whisper the officers in game with code.';
 			document.getElementById('description3').value = 'Anyone who whisper that is in private profile will be blocked.';
-			document.getElementById('description4').value = 'WE WILL DO BLOODLUST 1 MIN KHAN, 1 x BCC EACH WH. BUY 1 x CANNON, 3 x MBC';
+			//document.getElementById('description4').value = 'WE WILL DO BLOODLUST 1 MIN KHAN, 1 x BCC EACH WH. BUY 1 x CANNON, 3 x MBC';
         }
 
         function addInfoField() {
@@ -210,7 +210,13 @@
                     details += `\n- ${infoValue.value}`;
                 }
             }
-			details += `\n**${description4}**`
+            // Check the rotation value before appending description4
+            if (`Khan → CTG Puturum → Ferrid → Mudster` === rotation) {
+                let description4 = "WE WILL DO BLOODLUST 1 MIN KHAN, 1 x BCC EACH WH. BUY 1 x CANNON, 3 x MBC";
+                details += `\n**${description4}**`;
+            } else {
+                
+            }
 			details += `\n\`\`\``; // Start of code block
 			details += `\nTIME: <t:${datetimeUTC}:F>`;
 			const ServerLabel = serverMapping[server] || server;
