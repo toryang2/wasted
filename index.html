@@ -199,11 +199,13 @@
             const invtimeUTC = invtime ? new Date(datetime.split('T')[0] + 'T' + invtime).getTime() / 1000 : null;
 
 			let details = ''; 
-            details += `# ${guildname}`
+            details += `# ${guildname.toUpperCase()}`
 			details += `\n\n*${description}*`
+            if (guildname.toUpperCase() === "WASTED") {
 			details += `\n\n-${description1}`
 			details += `\n-${description2}`
 			details += `\n-${description3}`
+            }
             for (let i = 0; i < infoCount; i++) {
                 const infoValue = document.getElementById(`infos-${i}`);
                 if (infoValue && infoValue.value) {
